@@ -28,7 +28,46 @@
 
     <div class="container">
         <h2>Minutos:</h2>
-        <select name="minutos" name
-    </div>
+        <select id="minutos" name="minutos"></select>
+
+        <h2>Segundos</h2>
+        <select id="segundos" name="segundos"></select>
+        <br>
+        <br>
+        <button id="comecar">Começar!</button>
+
+        <div id="display">
+            <h3></h3>
+        </div> <!-- display -->
+
+
+    </div> <!-- container -->
+
+    <script>
+        var display = document.getElementById("display");
+
+        var minutos = document.getElementById("minutos");
+        var segundos = document.getElementById("segundos");
+
+        var comecar = document.getElementById("comecar");
+
+
+        var cronometroSeg;
+
+        var minutoAtual;
+        var segundoAtual;
+
+        var interval;
+
+        for(var i=0; i<=59; i++){
+            minutos.innerHTML+='<option value=" ' + i + '">' + i + '<option>';
+        }
+
+        for(var i=0; i<=59; i++){
+            segundos.innerHTML+='<option value=" ' + i + '">' + i + '<option>';
+        }
+
+        comecar.addEventListener("click")
+    </script>
 </body>
 </html>

@@ -67,7 +67,35 @@
             segundos.innerHTML+='<option value=" ' + i + '">' + i + '<option>';
         }
 
-        comecar.addEventListener("click")
+        comecar.addEventListener('click', function(){
+            minutoAtual = minutos.value;
+            segundoAtual = segundo.value;
+
+            display.chilNodes[1].innerHTML = minutoAtual + ":" + segundoAtual;
+
+            interval = setInterval(function(){
+                segundoAtual--;
+                if(segundoAtual <= 0) {
+                    if(minutoAtual>0) {
+                        minutoAtual--;
+                        segundoAtual = 59;
+                    }
+                    else{
+                        document.getElementById("sound").play();
+                        alert("Desligar Alarme!");
+                        clearInterval(interval);
+                        location.reload();
+
+                    }
+                }
+
+                display.childNodes[1].innerHTML = minutoAtual + ":" + segundoAtual;
+            },1000)
+
+        }
+    
+        
+        );
     </script>
 </body>
 </html>

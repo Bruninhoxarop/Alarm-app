@@ -1,0 +1,6 @@
+{
+    "name": "alarm-app",
+    "version": "1.0.0",
+    "description": "Simple Alarm App with NW.js",
+    "main": "index.html"
+}
